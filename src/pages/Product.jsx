@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import { CartContext } from "../Components/Features/ContextProvider";
+
 /* eslint-disable react/prop-types */
+
 const Product = ({ product }) => {
+  const { dispatch } = useContext(CartContext);
+
   return (
     <div className="col">
       <div className="card h-100">
@@ -12,9 +18,12 @@ const Product = ({ product }) => {
           <h4 className="card-title">{product.title}</h4>
           <h5 className="">${product.price}</h5>
 
-          <a href="" className="btn btn-primary ">
+          <button
+            onClick={() => dispatch({ type: "Add", product: product })}
+            className="btn btn-primary "
+          >
             Add To Cart
-          </a>
+          </button>
         </div>
       </div>
     </div>
