@@ -15,7 +15,13 @@ const Cart = () => {
         </div>
       </div>
 
-      <div className="col-4"></div>
+      <div className="col-4 mb-3 text-white">
+        <div className="bg-secondary">
+          <h5>Total Item:</h5>
+          <h5>Total Price:</h5>
+          <button className="btn btn-warning">Checkout</button>
+        </div>
+      </div>
     </div>
   );
 };
