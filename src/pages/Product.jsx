@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { CartContext } from "../Components/Features/ContextProvider";
+// import { CartContext } from "../Components/Features/ContextProvider";
 
 /* eslint-disable react/prop-types */
 
 const Product = ({ product }) => {
-  const { dispatch } = useContext(CartContext);
+  // const { dispatch } = useContext(CartContext);
 
   return (
     <div className="col">
@@ -19,7 +19,7 @@ const Product = ({ product }) => {
           <h5 className="">${product.price}</h5>
 
           <button
-            onClick={() => dispatch({ type: "Add", product: product })}
+            // onClick={() => dispatch({ type: "Add", product: product })}
             className="btn btn-primary "
           >
             Add To Cart

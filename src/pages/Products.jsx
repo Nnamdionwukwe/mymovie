@@ -7,6 +7,8 @@ const Products = () => {
 
   return (
     <div className="container mt-5 mb-5">
+      <input type="text" placeholder="Search" />
+
       <div className="row row-cols-2 row-cols-md-2 g-4">
         {products.map((p) => (
           <Product product={p} key={p.id} />

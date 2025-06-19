@@ -1,10 +1,10 @@
 import { BsCart } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { CartContext } from "./Features/ContextProvider";
+// import { CartContext } from "./Features/ContextProvider";
 import { useContext } from "react";
 
 const Navbar = () => {
-  const { cart } = useContext(CartContext);
+  // const { cart } = useContext(CartContext);
 
   return (
     <div className="d-flex justify-content-between bg-secondary py-3 px-5 text-white">
@@ -13,7 +13,7 @@ const Navbar = () => {
       </Link>
       <Link to="/cart" className="navbar-link fs-5 text-white">
         <BsCart />
-        {cart.length}
+        {/* {cart.length} */}
       </Link>
     </div>
   );

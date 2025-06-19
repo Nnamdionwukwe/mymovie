@@ -1,31 +1,42 @@
-/* eslint-disable react/prop-types */
-import { createContext, useReducer, useEffect } from "react";
-import CartReduser from "./CartReduser";
+// /* eslint-disable react/prop-types */
+// import { createContext, useReducer, useEffect, useState } from "react";
+// import CartReduser from "./CartReduser";
+// import Data from "../Data.json";
 
-export const CartContext = createContext();
+// export const CartContext = createContext();
 
-const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+// //const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
 
-const ContextProvider = ({ children }) => {
-  function store() {
-    const storedValue = localStorage.getItem("cart");
-    return JSON.parse(storedValue);
-  }
+// const ContextProvider = ({ children }) => {
+//   const [query, setQuery] = useState("");
 
-  const [cart, dispatch] = useReducer(CartReduser, store() || []);
+//   const handleInputhange = (e) => {
+//     setQuery(e.target.value);
+//   };
 
-  useEffect(
-    function () {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    },
-    [cart]
-  );
+//   const filteredItems = Data.filter((product) =>
+//     product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1)
+//   );
 
-  return (
-    <CartContext.Provider value={{ cart, dispatch }}>
-      {children}
-    </CartContext.Provider>
-  );
-};
+//   function store() {
+//     const storedValue = localStorage.getItem("cart");
+//     return JSON.parse(storedValue);
+//   }
 
-export default ContextProvider;
+//   const [cart, dispatch] = useReducer(CartReduser, store() || []);
+
+//   useEffect(
+//     function () {
+//       localStorage.setItem("cart", JSON.stringify(cart));
+//     },
+//     [cart]
+//   );
+
+//   return (
+//     <CartContext.Provider value={{ cart, dispatch }}>
+//       {children}
+//     </CartContext.Provider>
+//   );
+// };
+
+// export default ContextProvider;
